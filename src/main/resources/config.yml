@@ -1,0 +1,56 @@
+Bosses:
+  Warden:
+    - EntityType: "WARDEN"
+      Nametag: "Demonio Cinza"
+      PrintBossBar: "\uE001"
+      BarColor: "RED"  # Cor da barra configurável
+    - EntityType: "WARDEN"
+      Nametag: "Demonio Vermelho"
+      PrintBossBar: "\uE002"
+      BarColor: "RED"  # Cor da barra configurável
+  Zombie:
+    - EntityType: "ZOMBIE"
+      Nametag: "derieri"
+      PrintBossBar: "\uE003"
+      BarColor: "RED"  # Cor da barra configurável
+    - EntityType: "ZOMBIE"
+      Nametag: "drole"
+      PrintBossBar: "\uE004"
+      BarColor: "RED"  # Cor da barra configurável
+    - EntityType: "ZOMBIE"
+      Nametag: "estarossa"
+      PrintBossBar: "\uE005"
+      BarColor: "RED"  # Cor da barra configurável
+    - EntityType: "ZOMBIE"
+      Nametag: "fraudrin"
+      PrintBossBar: "\uE006"
+      BarColor: "RED"  # Cor da barra configurável
+    - EntityType: "ZOMBIE"
+      Nametag: "galand"
+      PrintBossBar: "\uE007"
+      BarColor: "RED"  # Cor da barra configurável
+    - EntityType: "ZOMBIE"
+      Nametag: "gloxinia"
+      PrintBossBar: "\uE008"
+      BarColor: "RED"  # Cor da barra configurável
+    - EntityType: "ZOMBIE"
+      Nametag: "gowther"
+      PrintBossBar: "\uE009"
+      BarColor: "RED"  # Cor da barra configurável
+    - EntityType: "ZOMBIE"
+      Nametag: "melascula"
+      PrintBossBar: "\uE010"
+      BarColor: "RED"  # Cor da barra configurável
+    - EntityType: "ZOMBIE"
+      Nametag: "monspiet"
+      PrintBossBar: "\uE011"
+      BarColor: "RED"  # Cor da barra configurável
+    - EntityType: "ZOMBIE"
+      Nametag: "zeldris"
+      PrintBossBar: "\uE012"
+      BarColor: "RED"  # Cor da barra configurável
+  Wither:
+    - EntityType: "WITHER"
+      Nametag: "Wither Storm"
+      PrintBossBar: "\uE000"
+      BarColor: "RED"  # Cor da barra configurável

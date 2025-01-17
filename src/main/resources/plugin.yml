@@ -1,0 +1,13 @@
+name: legendary_boss_bar
+version: '1.0.0'
+main: www.legendarycommunity.com.br.legendary_boss_bar.Legendary_boss_bar
+api-version: '1.21'
+authors: [ Thaynison ]
+description: Plugin Legendary Community
+website: http://www.legendarycommunity.com.br
+commands:
+  legendarybossbar:
+    description: Reload the configuration of the Legendary Boss Bar
+    usage: /<command> reload
+    permission: legendarybossbar.reload
+    permission-message: Você não tem permissão para recarregar a configuração.
