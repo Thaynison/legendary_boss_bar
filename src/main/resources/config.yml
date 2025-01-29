@@ -49,6 +49,10 @@ Bosses:
       Nametag: "zeldris"
       PrintBossBar: "\uE012"
       BarColor: "RED"  # Cor da barra configurável
+    - EntityType: "ZOMBIE"
+      Nametag: "fada"
+      PrintBossBar: "\uE013"
+      BarColor: "GREEN"  # Cor da barra configurável
   Wither:
     - EntityType: "WITHER"
       Nametag: "Wither Storm"

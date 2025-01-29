@@ -17,10 +17,7 @@ import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public final class Legendary_boss_bar extends JavaPlugin implements Listener {
 
@@ -74,12 +71,16 @@ public final class Legendary_boss_bar extends JavaPlugin implements Listener {
                 BossBar bossBar = bossBars.get(livingEntity);
                 double health = Math.max(0, livingEntity.getHealth() - event.getFinalDamage());
                 double maxHealth = Objects.requireNonNull(livingEntity.getAttribute(org.bukkit.attribute.Attribute.GENERIC_MAX_HEALTH)).getValue();
-                bossBar.setProgress(health / maxHealth);
+
+                // Garantir que o progresso esteja entre 0.0 e 1.0
+                double progress = Math.min(1.0, health / maxHealth);
+                bossBar.setProgress(progress);
             } else {
                 assignBossBar(livingEntity);
             }
         }
     }
+
 
     @EventHandler
     public void onEntityDeath(EntityDeathEvent event) {
@@ -123,13 +124,18 @@ public final class Legendary_boss_bar extends JavaPlugin implements Listener {
     }
 
     private void updateBossBarsVisibility() {
-        for (Map.Entry<LivingEntity, BossBar> entry : bossBars.entrySet()) {
+        // Lista para armazenar as entidades que precisam ser removidas
+        List<LivingEntity> toRemove = new ArrayList<>();
+
+        // Usar um Iterator para evitar ConcurrentModificationException
+        for (Iterator<Map.Entry<LivingEntity, BossBar>> iterator = bossBars.entrySet().iterator(); iterator.hasNext(); ) {
+            Map.Entry<LivingEntity, BossBar> entry = iterator.next();
             LivingEntity boss = entry.getKey();
             BossBar bossBar = entry.getValue();
 
             if (boss.isDead()) {
                 bossBar.removeAll();
-                bossBars.remove(boss);
+                toRemove.add(boss);  // Adiciona para remoção posterior
                 continue;
             }
 
@@ -144,7 +150,11 @@ public final class Legendary_boss_bar extends JavaPlugin implements Listener {
             }
             bossBar.setVisible(playerInRange);
         }
+
+        // Remover as entradas fora do loop para evitar ConcurrentModificationException
+        toRemove.forEach(boss -> bossBars.remove(boss));
     }
+
 
     private void reloadBossBars() {
         bossBars.values().forEach(BossBar::removeAll);
