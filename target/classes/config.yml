@@ -58,3 +58,8 @@ Bosses:
       Nametag: "Wither Storm"
       PrintBossBar: "\uE000"
       BarColor: "RED"  # Cor da barra configurável
+  Phantom:
+    - EntityType: "PHANTOM"
+      Nametag: "Arcanus"
+      PrintBossBar: "\uE014"
+      BarColor: "BLUE"  # Cor da barra configurável
